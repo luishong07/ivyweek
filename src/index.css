@@ -1,6 +1,7 @@
 :root {
     --bg-color: rgb(234, 234, 213);
     --main-color: rgb(74, 84, 120);
+    font-family: 'Architects Daughter', cursive;
 }
 
 body {
@@ -23,7 +24,10 @@ body {
     grid-row-gap: 0px;
 }
 
-.div1 {
+.card{
+    outline: 1px var(--main-color) solid;
+} 
+/* .div1 {
     grid-area: 1 / 1 / 2 / 2;
     outline: 1px var(--main-color) solid;
 }
@@ -54,4 +58,4 @@ body {
 .div8 {
     grid-area: 4 / 2 / 5 / 3;
     outline: 1px var(--main-color) solid;
-}
+} */
