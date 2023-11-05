@@ -4,7 +4,6 @@ import "./App.css";
 
 function App() {
     const date = new Date()
-    console.log(date.getDay());
 
     //idea for background animation or progress
     //snake-like game that grows as tasks are completed; constellation-like drawing with p5
