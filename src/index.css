@@ -1,8 +1,9 @@
 :root {
     --bg-color: rgb(234, 234, 213);
     --main-color: rgb(74, 84, 120);
-    font-family: 'Architects Daughter', cursive;
+    font-family: "Architects Daughter", cursive;
 }
+
 
 body {
     padding: 0;
@@ -10,58 +11,55 @@ body {
     background-color: var(--bg-color);
 }
 .container {
-    
     border: 2px var(--main-color) solid;
     border-radius: 1.5rem;
     width: 725px;
     height: 97vh;
-    margin:  auto;
-    padding: .5rem;
+    margin: auto;
+    padding: 0.5rem;
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    grid-column-gap: .75rem;
-    grid-row-gap: .5rem;
+    grid-column-gap: 0.75rem;
+    grid-row-gap: 0.5rem;
 }
 
-.card{
+.card {
     outline: 1px var(--main-color) solid;
     /* margin: .5rem .75rem; */
     margin: 0;
-    border-radius: 1rem ;
-
-} 
-.day-header{
+    border-radius: 1rem;
+}
+.day-header {
     /* background-color: red; */
     font-size: 1.5rem;
     text-align: center;
 }
-.content{
+.content {
     /* background-color: green; */
     display: grid;
     height: calc(100% - 2rem);
     padding: 0 2rem;
     /* outline: red 1px solid; */
 }
-input[type=text]{
+input[type="text"] {
     background-color: rgb(207, 207, 198);
-    font-family: 'Architects Daughter', cursive;
+    font-family: "Architects Daughter", cursive;
     border: var(--main-color) 1px solid;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
 }
-#taskInput{
+#taskInput {
     margin-right: 1rem;
 }
-#saveBtn{
+#saveBtn {
     margin-right: 1rem;
-    font-family: 'Architects Daughter', cursive;
-
+    font-family: "Architects Daughter", cursive;
 }
-#clearBtn{
-    font-family: 'Architects Daughter', cursive;
-
+#clearBtn {
+    font-family: "Architects Daughter", cursive;
 }
+
 /* .div1 {
     grid-area: 1 / 1 / 2 / 2;
     outline: 1px var(--main-color) solid;
