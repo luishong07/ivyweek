@@ -59,7 +59,12 @@ input[type="text"] {
 #clearBtn {
     font-family: "Architects Daughter", cursive;
 }
-
+.el {
+    height: 16px;
+    width: 16px;
+    background-color: green;
+    z-index: -1;
+  }
 /* .div1 {
     grid-area: 1 / 1 / 2 / 2;
     outline: 1px var(--main-color) solid;
