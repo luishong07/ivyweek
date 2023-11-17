@@ -10,90 +10,22 @@ body {
     margin: 0;
     background-color: var(--bg-color);
 }
-.container {
-    border: 2px var(--main-color) solid;
-    border-radius: 1.5rem;
-    width: 725px;
-    height: 97vh;
-    margin: auto;
-    padding: 0.5rem;
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-column-gap: 0.75rem;
-    grid-row-gap: 0.5rem;
+.week-list{
+    /* position: absolute; */
+    outline: red 1px solid;
+    width: 45em;
+    height: 100dvh;
+    margin: 0 auto;
+    /* z-index: 0; */
 }
-
-.card {
-    outline: 1px var(--main-color) solid;
-    /* margin: .5rem .75rem; */
-    margin: 0;
-    border-radius: 1rem;
-}
-.day-header {
-    /* background-color: red; */
-    font-size: 1.5rem;
-    text-align: center;
-}
-.content {
-    /* background-color: green; */
-    display: grid;
-    height: calc(100% - 2rem);
-    padding: 0 2rem;
-    /* outline: red 1px solid; */
-}
-input[type="text"] {
-    background-color: rgb(207, 207, 198);
-    font-family: "Architects Daughter", cursive;
-    border: var(--main-color) 1px solid;
-    border-radius: 0.5rem;
-}
-#taskInput {
-    margin-right: 1rem;
-}
-#saveBtn {
-    margin-right: 1rem;
-    font-family: "Architects Daughter", cursive;
-}
-#clearBtn {
-    font-family: "Architects Daughter", cursive;
+.animation-bg{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
 }
 .el {
     height: 16px;
     width: 16px;
     background-color: green;
-    z-index: -1;
   }
-/* .div1 {
-    grid-area: 1 / 1 / 2 / 2;
-    outline: 1px var(--main-color) solid;
-}
-.div2 {
-    grid-area: 1 / 2 / 2 / 3;
-    outline: 1px var(--main-color) solid;
-}
-.div3 {
-    grid-area: 2 / 1 / 3 / 2;
-    outline: 1px var(--main-color) solid;
-}
-.div4 {
-    grid-area: 2 / 2 / 3 / 3;
-    outline: 1px var(--main-color) solid;
-}
-.div5 {
-    grid-area: 3 / 1 / 4 / 2;
-    outline: 1px var(--main-color) solid;
-}
-.div6 {
-    grid-area: 3 / 2 / 4 / 3;
-    outline: 1px var(--main-color) solid;
-}
-.div7 {
-    grid-area: 4 / 1 / 5 / 2;
-    outline: 1px var(--main-color) solid;
-}
-.div8 {
-    grid-area: 4 / 2 / 5 / 3;
-    outline: 1px var(--main-color) solid;
-} */
