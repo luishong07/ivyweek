@@ -7,29 +7,29 @@ export default function AnimationBg() {
     useEffect(() => {
         animationRef.current = anime({
             targets: ".el",
-            // translateX: 1420,
-            // // translateY: 500,
-            // // delay: function (el, i) {
-            // //     return i * 100;
-            // // },
-            // loop: true,
-            // direction: "alternate",
-            // easing: "easeInOutSine",
-            keyframes: [
-                {translateX: 1415},
-                {translateY: 150},
-                {translateX: 0},
-                {translateY: 0}
-              ],
-              duration: 8000,
-              easing: 'easeInOutSine',
-              loop: true
+            translateX: 1410,
+            // translateY: 500,
+            // delay: function (el, i) {
+            //     return i * 100;
+            // },
+            loop: true,
+            direction: "alternate",
+            easing: "easeInOutSine",
         });
     }, []);
 
     return (
         <div className="animation-bg">
             <div className="el" />
+            {/* <svg class="small shape color-red" viewBox="0 0 100 25">
+                <circle
+                    cx="50%"
+                    cy="50%"
+                    r="5"
+                    fill-rule="evenodd"
+                    stroke-linecap="square"
+                />
+            </svg> */}
         </div>
     );
 }
