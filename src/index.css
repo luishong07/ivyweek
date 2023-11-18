@@ -18,6 +18,28 @@ body {
     position: absolute;
     left: calc(50% - 22.5em);
     border: var(--main-color) 1px solid;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0rem;
+    grid-row-gap: 0rem;
+}
+.card {
+    border: 1px var(--main-color) solid;
+    border-radius: 0.5rem;
+    margin: 1rem;
+}
+.content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+.day-header {
+    text-align: center;
+    font-size: 1.25rem;
 }
 .animation-bg {
     position: absolute;
