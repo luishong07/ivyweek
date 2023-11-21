@@ -36,6 +36,7 @@ body {
     grid-template-rows: repeat(6, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    padding: 0 .5rem
 }
 .day-header {
     text-align: center;
