@@ -10,7 +10,7 @@ export default function TaskForm(props) {
         setNewTask("")
     }   
     return (
-        <div>
+        <div className="task-form">
             {/* <input type="checkbox"  id="taskDone"/> */}
             <input
                 onChange={e => setNewTask(e.target.value)}
