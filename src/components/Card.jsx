@@ -5,7 +5,8 @@ import TaskForm from "./TaskForm";
 
 export default function Card(props) {
     const [tasks, setTasks] = useState([
-        "groceries",
+        {task:"groceries", done: true}
+        // "groceries",
         // "rock",
         // "stone",
         // "chalupas",
@@ -18,10 +19,16 @@ export default function Card(props) {
             <div className="day-header">{props.day}</div>
             <div className="content">
                 {tasks.map((t) => {
-                    return <div key={t}>{t}</div>;
+                    return (
+                        <div className="task-item">
+                            <input type="checkbox" checked={t.done}/>
+                            <div className={t.done?"task-done":""} key={t}>{t.task}</div>
+                        </div>
+                    );
                 })}
-
-                {tasks.length < 6 ? <TaskForm tasks={tasks} setTasks={setTasks} /> : null}
+                {tasks.length < 6 ? (
+                    <TaskForm tasks={tasks} setTasks={setTasks} />
+                ) : null}
             </div>
         </div>
     );
