@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "../index.css";
 import TaskForm from "./TaskForm";
+import TaskItem from "./TaskItem";
 // import { set } from "animejs";
 
 export default function Card(props) {
     const [tasks, setTasks] = useState([
-        {task:"groceries", done: true}
+        // {task:"groceries", done: true}
         // "groceries",
         // "rock",
         // "stone",
@@ -19,12 +20,8 @@ export default function Card(props) {
             <div className="day-header">{props.day}</div>
             <div className="content">
                 {tasks.map((t) => {
-                    return (
-                        <div className="task-item">
-                            <input type="checkbox" checked={t.done}/>
-                            <div className={t.done?"task-done":""} key={t}>{t.task}</div>
-                        </div>
-                    );
+                    return <TaskItem task={t}/>
+                    
                 })}
                 {tasks.length < 6 ? (
                     <TaskForm tasks={tasks} setTasks={setTasks} />

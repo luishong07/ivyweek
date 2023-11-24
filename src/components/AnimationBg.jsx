@@ -7,7 +7,7 @@ export default function AnimationBg() {
     useEffect(() => {
         animationRef.current = anime({
             targets: ".el",
-            translateX: 1410,
+            translateX: 500,
             // translateY: 500,
             // delay: function (el, i) {
             //     return i * 100;

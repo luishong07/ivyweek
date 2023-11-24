@@ -12,24 +12,27 @@ body {
 }
 .week-list {
     /* outline: red 1px solid; */
+    /* display: none; */
     width: 45em;
     height: calc(100vh - 2rem);
-    margin: 1rem auto;
+    margin: .5rem auto;
     border-radius: 1rem;
     position: absolute;
     left: calc(50% - 22.5em);
     border: var(--main-color) 1px solid;
 
     display: grid;
+    /* display: none; */
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    grid-column-gap: 0rem;
-    grid-row-gap: 0rem;
+    grid-column-gap: .5rem;
+    grid-row-gap: .5rem;
+    padding: .5rem;
 }
 .card {
     border: 1px var(--main-color) solid;
-    border-radius: 0.5rem;
-    margin: 1rem;
+    border-radius: 1rem;
+    /* margin: 1rem; */
 }
 .content {
     display: grid;
@@ -78,5 +81,11 @@ input[type="text"] {
 }
 .task-item{
     display: grid;
-    grid-template-columns: 1fr 12fr;
+    grid-template-columns: 12fr 1fr;
+}
+.delete-btn{
+    right: 0;
+    outline: 1px solid red;
+    text-align: center;
+    cursor: pointer;
 }
