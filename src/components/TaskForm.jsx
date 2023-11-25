@@ -6,7 +6,12 @@ export default function TaskForm(props) {
     const handleAddNewTask = () =>{
         console.log('New Task');
         // console.log(props.tasks);
-        props.setTasks([...props.tasks,newTask])
+        const newObjTask = {
+            id: props.tasks.length + 1,
+            taskInfo: newTask,
+            done: false
+        }
+        props.setTasks([...props.tasks,newObjTask])
         setNewTask("")
     }   
     return (

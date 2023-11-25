@@ -3,13 +3,13 @@ import Card from "./Card";
 
 const daysAndWeek = [
     "week",
-    "mon",
-    "tue",
-    "wed",
-    "thur",
-    "fri",
-    "sat",
-    "sun",
+    // "mon",
+    // "tue",
+    // "wed",
+    // "thur",
+    // "fri",
+    // "sat",
+    // "sun",
 ]
 
 export default function WeekList() {
