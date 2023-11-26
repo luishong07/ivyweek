@@ -2,10 +2,9 @@ import React, { useState } from "react";
 
 export default function TaskForm(props) {
     const [newTask, setNewTask] = useState("");
-
+    
     const handleAddNewTask = () =>{
         console.log('New Task');
-        // console.log(props.tasks);
         const newObjTask = {
             id: props.tasks.length + 1,
             taskInfo: newTask,
@@ -16,7 +15,6 @@ export default function TaskForm(props) {
     }   
     return (
         <div className="task-form">
-            {/* <input type="checkbox"  id="taskDone"/> */}
             <input
                 onChange={e => setNewTask(e.target.value)}
                 value={newTask}
@@ -24,7 +22,6 @@ export default function TaskForm(props) {
                 id="taskInput"
             />
             <button onClick={handleAddNewTask} id="saveBtn">Save</button>
-            {/* <button id="clearBtn">Clear</button> */}
         </div>
     );
 }

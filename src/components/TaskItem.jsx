@@ -1,10 +1,22 @@
-import React from 'react'
+import React from "react";
 
 export default function TaskItem(props) {
-  return (
-    <div className='task-item'>
-        <div className={props.task.done ? "task-done": ""}>{props.task.taskInfo}</div>
-        <div className='delete-btn'>X</div>
-    </div>
-  )
+	// const []
+
+	const handleClick = (e)=>{
+		// console.log(e.target);
+		props.handleToggle(e.target.id)
+	}
+    return (
+        <div className="task-item">
+            <div 
+				id={props.task.id}
+				className={props.task.done ? "task-done" : "task"}
+				onClick={handleClick}
+			>
+                {props.task.taskInfo}
+            </div>
+            <div className="delete-btn">X</div>
+        </div>
+    );
 }
