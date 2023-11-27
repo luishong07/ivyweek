@@ -2,14 +2,14 @@ import React from "react";
 import Card from "./Card";
 
 const daysAndWeek = [
-    "week",
-    // "mon",
-    // "tue",
-    // "wed",
-    // "thur",
-    // "fri",
-    // "sat",
-    // "sun",
+    {day:"week",id:-1},
+    {day:"mon",id:1},
+    {day:"tue",id:2},
+    {day:"wed",id:3},
+    {day:"thur",id:4},
+    {day:"fri",id:5},
+    {day:"sat",id:6},
+    {day:"sun",id:0},
 ]
 
 export default function WeekList() {

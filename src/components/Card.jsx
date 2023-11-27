@@ -7,7 +7,6 @@ import TaskItem from "./TaskItem";
 export default function Card(props) {
     const [tasks, setTasks] = useState([]);
     const handleToggle = (id) => {
-        console.log(typeof tasks[0].id , typeof id);
 
         let mapped = tasks.map((task) => {
             return task.id === parseInt(id) ? { ...task, done: !task.done } : { ...task };
@@ -16,16 +15,15 @@ export default function Card(props) {
     };
 
     const deleteTask =(id)=>{
-        // console.log(id);
         let newTaskList = tasks.filter((task) =>{
             return task.id !== parseInt(id)
         })
-        // console.log(newTaskList);
         setTasks(newTaskList)
     }
+   
     return (
         <div className="card">
-            <div className="day-header">{props.day}</div>
+            <div className="day-header">{props.day.day }{new Date().getDay() == props.day.id ? <div className="today"> (it's today!)</div>:""}</div>
             <div className="content">
                 {tasks.map((t) => {
                     return <TaskItem task={t} handleToggle={handleToggle} deleteTask={deleteTask}/>;
