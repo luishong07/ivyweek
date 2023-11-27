@@ -14,12 +14,21 @@ export default function Card(props) {
         });
         setTasks(mapped)
     };
+
+    const deleteTask =(id)=>{
+        // console.log(id);
+        let newTaskList = tasks.filter((task) =>{
+            return task.id !== parseInt(id)
+        })
+        // console.log(newTaskList);
+        setTasks(newTaskList)
+    }
     return (
         <div className="card">
             <div className="day-header">{props.day}</div>
             <div className="content">
                 {tasks.map((t) => {
-                    return <TaskItem task={t} handleToggle={handleToggle} />;
+                    return <TaskItem task={t} handleToggle={handleToggle} deleteTask={deleteTask}/>;
                 })}
                 {tasks.length < 6 ? (
                     <TaskForm tasks={tasks} setTasks={setTasks} />

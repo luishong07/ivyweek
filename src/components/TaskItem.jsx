@@ -7,6 +7,9 @@ export default function TaskItem(props) {
 		// console.log(e.target);
 		props.handleToggle(e.target.id)
 	}
+	const handleDelete = (e) =>{
+		props.deleteTask(e.target.id)
+	}
     return (
         <div className="task-item">
             <div 
@@ -16,7 +19,11 @@ export default function TaskItem(props) {
 			>
                 {props.task.taskInfo}
             </div>
-            <div className="delete-btn">X</div>
+            <div 
+				id = {props.task.id} 
+				className="delete-btn"
+				onClick={handleDelete}
+				>X</div>
         </div>
     );
 }
