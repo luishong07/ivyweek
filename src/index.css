@@ -85,20 +85,29 @@ input[type="text"] {
     border-radius: 0.5rem;
 }
 .task {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     display: list-item;
-    /* list-style-type: ; */
+    list-style-type: circle;
     cursor: pointer;
+    /* outline: red 1px solid; */
 }
 .task-done {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     text-decoration: line-through;
     cursor: pointer;
     display: list-item;
-
+    list-style-type: circle;
+    /* outline: red 1px solid; */
 }
 .task-item {
     display: grid;
     grid-template-columns: 12fr 1fr;
     padding-left: 1rem;
+    gap: 1rem;
 }
 .delete-btn {
     right: 0;
