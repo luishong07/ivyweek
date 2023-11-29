@@ -2,15 +2,16 @@ import React, { useEffect, useState } from "react";
 import "../index.css";
 import TaskForm from "./TaskForm";
 import TaskItem from "./TaskItem";
+import randomIcon  from "../assets/randomIcon.svg"
 // import { set } from "animejs";
 
 export default function Card(props) {
     const [tasks, setTasks] = useState([]);
+    const [wobble, setWobble] = useState(0)
 
     const handleFetchData = async () => {
         const res = await fetch("http://www.boredapi.com/api/activity/")
         const data = await res.json()
-        console.log(data);
         let newTask = {
             taskInfo: data.activity,
             done: false,
@@ -19,10 +20,9 @@ export default function Card(props) {
         setTasks([...tasks, newTask])
     };
 
-    useEffect(() => {
-        console.log("use effect ran");
-        handleFetchData()
-    }, []);
+    // useEffect(() => {
+    //     console.log("use effect ran");
+    // }, []);
 
     const handleToggle = (id) => {
         let mapped = tasks.map((task) => {
@@ -40,9 +40,25 @@ export default function Card(props) {
         setTasks(newTaskList);
     };
 
+    
+
+    const handleAddingRandomTask = ()=>{
+        if(tasks.length >=6) return 
+        setWobble(1)
+        handleFetchData()
+    }
+
     return (
         <div className="card">
             <div className="day-header">
+                <img 
+                    onClick={handleAddingRandomTask} 
+                    wobble={wobble} 
+                    className="random-icon" 
+                    src={randomIcon} alt="icon"
+                    onAnimationEnd={() => setWobble(0)}
+                        
+                    />
                 {props.day.day}
                 {new Date().getDay() == props.day.id ? (
                     <div className="today"> (it's today!)</div>

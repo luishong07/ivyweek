@@ -22,7 +22,6 @@ body {
     border: var(--main-color) 1px solid;
 
     display: grid;
-    /* display: none; */
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 0.5rem;
@@ -32,23 +31,21 @@ body {
 .card {
     border: 1px var(--main-color) solid;
     border-radius: 1rem;
-   
 }
 .content {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 1fr);
     grid-column-gap: 0px;
-    grid-row-gap: clamp(.1rem, 0.15rem, 2rem);
+    grid-row-gap: clamp(0.1rem, 0.15rem, 2rem);
     padding: 0 1rem;
     justify-content: space-around;
 }
 .day-header {
     text-align: center;
     font-size: 1.2rem;
-    
 }
-.today{
+.today {
     color: red;
     display: inline;
     text-decoration: underline;
@@ -112,22 +109,70 @@ input[type="text"] {
     right: 0;
     text-align: center;
     cursor: pointer;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     background-color: rgb(150, 150, 141);
     border: black solid 1px;
 }
-.tooltiptext{
+.tooltiptext {
     visibility: hidden;
     background-color: black;
     color: white;
     text-align: center;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     position: absolute;
     z-index: 1;
     transform: translateX(-75%) translateY(-100%);
-
-    /* bottom: 50px; */
 }
-.task-item:hover .tooltiptext{
+.task-item:hover .tooltiptext {
     visibility: visible;
 }
+
+.random-icon {
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+.random-icon[wobble="1"] {
+    animation: shake 0.5s 1;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(-15deg);
+    }
+    20% {
+        transform: rotate(15deg);
+    }
+    30% {
+        transform: rotate(0deg);
+    }
+    40% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(-15deg);
+    }
+    60% {
+        transform: rotate(0deg);
+    }
+    70% {
+        transform: rotate(-15deg);
+    }
+    80% {
+        transform: rotate(15deg);
+    }
+    90% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-15deg);
+    }
+}
+/* @media (max-width: 25em) {
+    .week-list {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+    }
+} */
