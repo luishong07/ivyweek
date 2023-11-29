@@ -91,7 +91,6 @@ input[type="text"] {
     display: list-item;
     list-style-type: circle;
     cursor: pointer;
-    /* outline: red 1px solid; */
 }
 .task-done {
     white-space: nowrap;
@@ -116,4 +115,19 @@ input[type="text"] {
     border-radius: .5rem;
     background-color: rgb(150, 150, 141);
     border: black solid 1px;
+}
+.tooltiptext{
+    visibility: hidden;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: .5rem;
+    position: absolute;
+    z-index: 1;
+    transform: translateX(-75%) translateY(-100%);
+
+    /* bottom: 50px; */
+}
+.task-item:hover .tooltiptext{
+    visibility: visible;
 }
