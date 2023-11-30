@@ -1,6 +1,6 @@
 :root {
     --bg-color: #eaead5;
-    --main-color: rgb(74, 84, 120);
+    --main-color: #475ca7;
     font-family: "Architects Daughter", cursive;
 }
 
@@ -133,6 +133,7 @@ input[type="text"] {
 }
 .random-icon[wobble="1"] {
     animation: shake 0.5s 1;
+    filter: invert(29%) sepia(77%) saturate(688%) hue-rotate(196deg) brightness(94%) contrast(83%);
 }
 
 @keyframes shake {
@@ -170,9 +171,12 @@ input[type="text"] {
         transform: rotate(-15deg);
     }
 }
-/* @media (max-width: 25em) {
+@media (max-width: 45em) {
     .week-list {
+        width: 22.5em;
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(8, 1fr);
+        left: calc(50% - 11.25em);
+        border: none;
     }
-} */
+}
