@@ -5,6 +5,7 @@ export default function TaskForm(props) {
     
     const handleAddNewTask = () =>{
         console.log('New Task');
+        if(newTask === "") return
         const newObjTask = {
             id: props.tasks.length + 1,
             taskInfo: newTask,

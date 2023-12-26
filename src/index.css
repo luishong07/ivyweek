@@ -176,7 +176,15 @@ input[type="text"] {
         width: 22.5em;
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(8, 1fr);
-        left: calc(50% - 11.25em);
+        left: calc(50% - 11.75em);
         border: none;
+    }
+    .card{
+        aspect-ratio: 1.618;
+
+    }
+    .content{
+        grid-row-gap: clamp(0.1rem, 0.5rem, 2rem);
+
     }
 }
