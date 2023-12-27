@@ -3,12 +3,15 @@ import "../index.css";
 import TaskForm from "./TaskForm";
 import TaskItem from "./TaskItem";
 import randomIcon  from "../assets/randomIcon.svg"
+import useLocalStorage from "../hooks/useLocalStorage";
 // import { set } from "animejs";
 
 export default function Card(props) {
     const [tasks, setTasks] = useState([]);
     const [wobble, setWobble] = useState(0)
-
+    const [things, setThings] = useLocalStorage(props.day.day,{})
+    console.log( things);
+    // setTasks(localStorage.getItem(props.day.day))
     const handleFetchData = async () => {
         const res = await fetch("http://www.boredapi.com/api/activity/")
         const data = await res.json()
@@ -19,7 +22,7 @@ export default function Card(props) {
         }
         setTasks([...tasks, newTask])
     };
-
+// {taskInfo: "Wrestle", done: false,id: 1}
     // useEffect(() => {
     //     console.log("use effect ran");
     // }, []);
@@ -77,7 +80,7 @@ export default function Card(props) {
                     );
                 })}
                 {tasks.length < 6 ? (
-                    <TaskForm tasks={tasks} setTasks={setTasks} />
+                    <TaskForm day={props.day.day} tasks={tasks} setTasks={setTasks} />
                 ) : null}
             </div>
         </div>
