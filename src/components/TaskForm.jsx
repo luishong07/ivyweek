@@ -5,6 +5,7 @@ export default function TaskForm(props) {
     
 
     const [newTask, setNewTask] = useState("");
+    const [localTask, setLocalTask] = useLocalStorage(props.day,'')
     const handleAddNewTask = () =>{
         console.log('New Task');
         if(newTask === "") return
@@ -19,8 +20,9 @@ export default function TaskForm(props) {
     return (
         <div className="task-form">
             <input
-                onChange={e => setNewTask(e.target.value)}
-                value={newTask}
+                onChange={e => setLocalTask(e.target.value)}
+                // onChange={e => setNewTask(e.target.value)}
+                value={localTask}
                 type="text"
                 id="taskInput"
             />

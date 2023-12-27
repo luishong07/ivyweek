@@ -1,10 +1,8 @@
 import React from "react";
 
 export default function TaskItem(props) {
-    // const []
 
     const handleClick = (e) => {
-        // console.log(e.target);
         props.handleToggle(e.target.id);
     };
     const handleDelete = (e) => {
