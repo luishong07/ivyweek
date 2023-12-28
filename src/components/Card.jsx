@@ -10,6 +10,7 @@ export default function Card(props) {
     // console.log(newLocalTask);
     const [tasks, setTasks] = useState(newLocalTask);
     const [wobble, setWobble] = useState(0)
+    const [toss, setToss] = useState(0)
 
     const handleFetchData = async () => {
         const res = await fetch("http://www.boredapi.com/api/activity/")
@@ -51,6 +52,13 @@ export default function Card(props) {
         handleFetchData()
     }
 
+    const handleDeleteAllTasks =()=>{
+        if(!tasks.length) return
+        setTasks([])
+        setToss(1)
+        setNewLocalTask([])
+    }
+
     return (
         <div className="card">
             <div className="day-header">
@@ -64,10 +72,11 @@ export default function Card(props) {
                 />
                 {props.day.day}
                 <img
+                    onClick={handleDeleteAllTasks}
                     className="trash-icon"
                     src={trashCan} alt="trash-icon"
-                    wobble={wobble} 
-                    onAnimationEnd={() => setWobble(0)}
+                    toss={toss} 
+                    onAnimationEnd={() => setToss(0)}
                 />
                 {new Date().getDay() == props.day.id ? (
                     <div className="today"> (it's today!)</div>

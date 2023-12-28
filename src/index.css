@@ -139,6 +139,47 @@ input[type="text"] {
     animation: shake 0.5s 1;
     filter: invert(29%) sepia(77%) saturate(688%) hue-rotate(196deg) brightness(94%) contrast(83%);
 }
+.trash-icon[toss="1"]{
+    animation: throw .5s 1;
+    /* filter: invert(29%) sepia(77%) saturate(688%) hue-rotate(196deg) brightness(94%) contrast(83%); */
+    filter: invert(23%) sepia(97%) saturate(6152%) hue-rotate(356deg) brightness(95%) contrast(124%);
+
+}
+@keyframes throw {
+    0% {
+        transform: translateY(0px);
+    }
+    10% {
+        transform: translateY(-2px);
+    }
+    20% {
+        transform: translateY(2px);
+    }
+    30% {
+        transform: translateY(0px);
+    }
+    40% {
+        transform: translateY(2px);
+    }
+    50% {
+        transform: translateY(-2px);
+    }
+    60% {
+        transform: translateY(0px);
+    }
+    70% {
+        transform: translateY(-2px);
+    }
+    80% {
+        transform: translateY(2px);
+    }
+    90% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-2px);
+    }
+}
 
 @keyframes shake {
     0% {
