@@ -3,11 +3,13 @@ import "../index.css";
 import TaskForm from "./TaskForm";
 import TaskItem from "./TaskItem";
 import randomIcon  from "../assets/randomIcon.svg"
-
+import useLocalStorage from "../hooks/useLocalStorage";
 export default function Card(props) {
+    const [newLocalTask, setNewLocalTask] = useLocalStorage(props.day.day,[])
+    console.log(newLocalTask);
     const [tasks, setTasks] = useState([]);
     const [wobble, setWobble] = useState(0)
-    
+
     const handleFetchData = async () => {
         const res = await fetch("http://www.boredapi.com/api/activity/")
         const data = await res.json()
@@ -17,6 +19,7 @@ export default function Card(props) {
             id: tasks.length +1
         }
         setTasks([...tasks, newTask])
+        setNewLocalTask([...tasks, newTask])
     };
 
 
@@ -73,7 +76,7 @@ export default function Card(props) {
                     );
                 })}
                 {tasks.length < 6 ? (
-                    <TaskForm day={props.day.day} tasks={tasks} setTasks={setTasks} />
+                    <TaskForm day={props.day.day} tasks={tasks} setTasks={setTasks} setNewLocalTask={setNewLocalTask}/>
                 ) : null}
             </div>
         </div>
