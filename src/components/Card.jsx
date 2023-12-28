@@ -30,6 +30,8 @@ export default function Card(props) {
                 : { ...task };
         });
         setTasks(mapped);
+        setNewLocalTask(mapped)
+
     };
 
     const deleteTask = (id) => {
