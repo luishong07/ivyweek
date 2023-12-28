@@ -6,8 +6,8 @@ import randomIcon  from "../assets/randomIcon.svg"
 import useLocalStorage from "../hooks/useLocalStorage";
 export default function Card(props) {
     const [newLocalTask, setNewLocalTask] = useLocalStorage(props.day.day,[])
-    console.log(newLocalTask);
-    const [tasks, setTasks] = useState([]);
+    // console.log(newLocalTask);
+    const [tasks, setTasks] = useState(newLocalTask);
     const [wobble, setWobble] = useState(0)
 
     const handleFetchData = async () => {
@@ -37,6 +37,7 @@ export default function Card(props) {
             return task.id !== parseInt(id);
         });
         setTasks(newTaskList);
+        setNewLocalTask(newTaskList)
     };
 
     

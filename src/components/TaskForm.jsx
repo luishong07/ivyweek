@@ -3,7 +3,6 @@ import useLocalStorage from "../hooks/useLocalStorage";
 export default function TaskForm(props) {
 
     const [newTask, setNewTask] = useState("");
-    // const [newLocalTask, setNewLocalTask] = useLocalStorage(props.day,[])
     const handleAddNewTask = () =>{
         console.log('New Task');
         if(newTask === "") return
@@ -15,7 +14,6 @@ export default function TaskForm(props) {
         props.setTasks([...props.tasks,newObjTask])
         setNewTask("")
         props.setNewLocalTask([...props.tasks,newObjTask])
-        // setNewLocalTask([...props.tasks,newObjTask])
     }   
     return (
         <div className="task-form">
