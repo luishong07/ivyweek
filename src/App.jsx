@@ -1,7 +1,4 @@
-import { useEffect, useRef, useState } from "react";
-import Card from "./components/Card";
 import "./App.css";
-import anime from "animejs";
 import WeekList from "./components/WeekList";
 import AnimationBg from "./components/AnimationBg";
 function App() {

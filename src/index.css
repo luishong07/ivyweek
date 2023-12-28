@@ -11,14 +11,12 @@ body {
     background-image: url(assets/paper-bg.png);
 }
 .week-list {
-    /* outline: red 1px solid; */
-    /* display: none; */
     width: 45em;
     height: calc(100vh - 2rem);
     margin: 0.5rem auto;
     border-radius: 1rem;
     position: absolute;
-    left: calc(50% - 22.5em);
+    left: calc(50% - 23.125em);
     border: var(--main-color) 1px solid;
 
     display: grid;
@@ -97,12 +95,11 @@ input[type="text"] {
     cursor: pointer;
     display: list-item;
     list-style-type: circle;
-    /* outline: red 1px solid; */
 }
 .task-item {
     display: grid;
     grid-template-columns: 12fr 1fr;
-    padding-left: 1rem;
+    padding-left: 0.5rem;
     gap: 1rem;
 }
 .delete-btn {
@@ -141,7 +138,6 @@ input[type="text"] {
 }
 .trash-icon[toss="1"]{
     animation: throw .5s 1;
-    /* filter: invert(29%) sepia(77%) saturate(688%) hue-rotate(196deg) brightness(94%) contrast(83%); */
     filter: invert(23%) sepia(97%) saturate(6152%) hue-rotate(356deg) brightness(95%) contrast(124%);
 
 }
