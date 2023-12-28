@@ -3,12 +3,11 @@ import "../index.css";
 import TaskForm from "./TaskForm";
 import TaskItem from "./TaskItem";
 import randomIcon  from "../assets/randomIcon.svg"
-// import { set } from "animejs";
 
 export default function Card(props) {
     const [tasks, setTasks] = useState([]);
     const [wobble, setWobble] = useState(0)
-    // setTasks(localStorage.getItem(props.day.day))
+    
     const handleFetchData = async () => {
         const res = await fetch("http://www.boredapi.com/api/activity/")
         const data = await res.json()
