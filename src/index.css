@@ -131,6 +131,10 @@ input[type="text"] {
     cursor: pointer;
     margin-right: 0.5rem;
 }
+.trash-icon{
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
 .random-icon[wobble="1"] {
     animation: shake 0.5s 1;
     filter: invert(29%) sepia(77%) saturate(688%) hue-rotate(196deg) brightness(94%) contrast(83%);

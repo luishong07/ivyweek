@@ -3,6 +3,7 @@ import "../index.css";
 import TaskForm from "./TaskForm";
 import TaskItem from "./TaskItem";
 import randomIcon  from "../assets/randomIcon.svg"
+import trashCan from "../assets/trashCan.svg"
 import useLocalStorage from "../hooks/useLocalStorage";
 export default function Card(props) {
     const [newLocalTask, setNewLocalTask] = useLocalStorage(props.day.day,[])
@@ -60,8 +61,14 @@ export default function Card(props) {
                     src={randomIcon} alt="icon"
                     onAnimationEnd={() => setWobble(0)}
                         
-                    />
+                />
                 {props.day.day}
+                <img
+                    className="trash-icon"
+                    src={trashCan} alt="trash-icon"
+                    wobble={wobble} 
+                    onAnimationEnd={() => setWobble(0)}
+                />
                 {new Date().getDay() == props.day.id ? (
                     <div className="today"> (it's today!)</div>
                 ) : (
