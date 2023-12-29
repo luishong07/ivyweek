@@ -88,6 +88,7 @@ export default function Card(props) {
                 {tasks.map((t) => {
                     return (
                         <TaskItem
+                            key={t.id}
                             task={t}
                             handleToggle={handleToggle}
                             deleteTask={deleteTask}
