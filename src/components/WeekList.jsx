@@ -15,7 +15,7 @@ const daysAndWeek = [
 export default function WeekList() {
     return <div className="week-list">
     {daysAndWeek.map(day =>{
-        return <Card day={day}/>
+        return <Card key={day.day} day={day}/>
     } )}
     </div>;
 }
