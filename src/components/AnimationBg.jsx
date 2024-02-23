@@ -4,15 +4,12 @@ import anime from "animejs/lib/anime.es.js";
 
 export default function AnimationBg() {
 
-
-    const [playing, setPlaying] = useState(false);
-    const animation = useRef(null);
-
     
     useEffect(() => {
         const container = document.querySelector('.anim-container')
-        for(let i = 0; i <= 7; i++){
+        for(let i = 0; i <8; i++){
             const blocks = document.createElement('div')
+            // blocks.textContent = i
             blocks.classList.add('block')
             container.appendChild(blocks)
         }
@@ -30,13 +27,13 @@ export default function AnimationBg() {
                     return anime.random(1,1.5)
                 },
                 easing: 'linear',
-                duration: 4000,
-                // delay: anime.stagger(10),
-                complete: animateBlock
+                duration: 3000,
+                // complete: animateBlock//this makes the background to continue the animations
+
             })
         }
         animateBlock()
-    });
+    },[]);
 
     
     return (

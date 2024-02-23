@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import useLocalStorage from "../hooks/useLocalStorage";
+// import useLocalStorage from "../hooks/useLocalStorage";
 export default function TaskForm(props) {
 
     const [newTask, setNewTask] = useState("");
     const handleAddNewTask = () =>{
-        console.log('New Task');
         if(newTask === "") return
         const newObjTask = {
             id: props.tasks.length + 1,

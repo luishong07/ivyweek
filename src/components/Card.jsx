@@ -7,7 +7,6 @@ import trashCan from "../assets/trashCan.svg"
 import useLocalStorage from "../hooks/useLocalStorage";
 export default function Card(props) {
     const [newLocalTask, setNewLocalTask] = useLocalStorage(props.day.day,[])
-    // console.log(newLocalTask);
     const [tasks, setTasks] = useState(newLocalTask);
     const [wobble, setWobble] = useState(0)
     const [toss, setToss] = useState(0)
