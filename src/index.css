@@ -2,7 +2,11 @@
     --bg-color: #eaead5;
     --main-color: #475ca7;
     font-family: "Architects Daughter", cursive;
-    
+    --pink: #ecb2ba;
+    --pink-dark: #c6939a;
+    --tape-gray: #dbd8be;
+    --tape-edge-gray: #b7b49d;
+    --transparent: rgba(255, 255, 255, 0);
 }
 
 body {
@@ -28,7 +32,6 @@ body {
     padding: 0.5rem;
     z-index: 1;
 }
-
 
 .card {
     border: 1px var(--main-color) solid;
@@ -309,17 +312,59 @@ input[type="text"] {
     border-radius: 50%;
     aspect-ratio: 1;
 }
-
+.pink {
+    --paper-color: var(--pink);
+    --paper-dark: var(--pink-dark);
+    --shadow-size: 1px;
+    --transparent: rgba(236, 178, 186, 0);
+}
+.blue {
+    --paper-color: #d5e0f9;
+    --paper-dark: #c2d0ea;
+    --shadow-size: 3px;
+    --transparent: rgba(213, 224, 249, 0);
+  }
 .block {
     /* flashcard version idea */
+    /* background-image: url(assets/flashcard2.png); */
+    background-image: url(assets/paper-bg.png);
 
-    background-image: url(assets/flashcard2.png);
+    /* border-radius: 0.5rem; */
     position: absolute;
     width: 150px;
     aspect-ratio: 1.618;
-    background-color: #dadada;
- 
-    border-radius: 0.5rem;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    background-size: contain;
+    background: linear-gradient(
+            to bottom right,
+            var(--paper-dark),
+            20%,
+            var(--transparent)
+        ),
+        var(--paper-color);
+    align-items: center;
+    justify-content: center;
+    font-family: "Caveat", cursive;
+    font-size: 2rem;
+    box-shadow: var(--shadow-size) var(--shadow-size) 2px var(--paper-dark);
+}
+.block::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+            var(--transparent),
+            50%,
+            var(--paper-dark),
+            51%,
+            var(--transparent)
+        ),
+        linear-gradient(
+            to right,
+            var(--transparent),
+            50%,
+            var(--paper-dark),
+            51%,
+            var(--transparent)
+        );
 }
