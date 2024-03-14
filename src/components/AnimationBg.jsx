@@ -1,5 +1,4 @@
-import { useState, useRef, useEffect } from "react";
-// import anime from "animejs";
+import {  useEffect } from "react";
 import anime from "animejs/lib/anime.es.js";
 
 export default function AnimationBg() {
@@ -9,7 +8,7 @@ export default function AnimationBg() {
         const container = document.querySelector('.anim-container')
         for(let i = 0; i <8; i++){
             const blocks = document.createElement('div')
-            blocks.textContent = i
+            blocks.textContent = `${i}`
             blocks.classList.add('block')
             container.appendChild(blocks)
         }
@@ -18,7 +17,6 @@ export default function AnimationBg() {
             anime({
                 targets: '.block',
                 translateX: function(){
-                    // generate a number between 0 and .35 and .65 and .95
                     const xCoordinate = anime.random(0.65*innerWidth/2, 0.9*innerWidth/2)
                     const sign = Math.floor((Math.random()*2))
                     const newTranslateX = sign ? xCoordinate : -1*xCoordinate
@@ -31,8 +29,8 @@ export default function AnimationBg() {
                 scale: function(){
                     return anime.random(1,1.2)
                 },
-                // easing: 'spring(1, 40, 10, 0)',
-                easing: 'cubicBezier(.5, .05, .1, .3)', 
+                easing: 'spring(1, 40, 10, 0)',
+                // easing: 'cubicBezier(.5, .05, .1, .3)', 
                 // easing: 'linear',
                 duration: 3000,
                 delay: 1000,

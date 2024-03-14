@@ -2,6 +2,7 @@
     --bg-color: #eaead5;
     --main-color: #475ca7;
     font-family: "Architects Daughter", cursive;
+    
 }
 
 body {
@@ -25,13 +26,66 @@ body {
     grid-column-gap: 0.5rem;
     grid-row-gap: 0.5rem;
     padding: 0.5rem;
+    z-index: 1;
 }
+
+
 .card {
     border: 1px var(--main-color) solid;
     border-radius: 1rem;
-    /* background-color: var(--bg-color);
-    background-image: url(assets/paper-bg.png); */
+    background-color: var(--bg-color);
+    background-image: url(assets/paper-bg.png);
+    /* z-index: 1; */
 }
+.card::before {
+    transform: translateX(-0.3rem) skew(0deg) rotate(4deg);
+    border-radius: 1rem;
+    position: absolute;
+    display: block;
+    z-index: -99;
+    border: 1px var(--main-color) solid;
+    height: 23.5%;
+    width: 48.1%;
+    content: "";
+    background-color: var(--bg-color);
+    background-image: url(assets/paper-bg.png);
+    transition: transform 0.5s;
+}
+/* slide on hover */
+.card:nth-child(even):hover::before {
+    /* only make slight animation */
+    transform: translateX(95%) skew(0deg) rotate(0deg);
+}
+/* static card */
+.card::after {
+    /* transform: translateX(0.2rem) translateY(-) skew(-2deg);
+    border-radius: 1rem;
+    position: absolute;
+    display: block;
+    z-index: -100;
+    border: 1px red solid;
+    height: 23.5%;
+    width: 48.1%;
+    content: ""; */
+    /* top: 1rem; */
+    transform: translateX(-0.3rem) translateY(-11rem) skew(0deg) rotate(-3deg);
+    border-radius: 1rem;
+    position: absolute;
+    display: block;
+    z-index: -99;
+    border: 1px var(--main-color) solid;
+    height: 23.5%;
+    width: 48.1%;
+    content: "";
+    background-color: var(--bg-color);
+    background-image: url(assets/paper-bg.png);
+}
+.card:nth-child(odd):hover::before {
+    /* only make slight animation */
+    transform: translateX(-20rem) skew(0deg);
+    /* border: 1px red solid; */
+}
+
 .content {
     display: grid;
     grid-template-columns: 1fr;
@@ -45,6 +99,7 @@ body {
     text-align: center;
     font-size: 1.2rem;
 }
+
 .today {
     color: red;
     display: inline;
@@ -237,19 +292,34 @@ input[type="text"] {
     justify-content: center;
     align-items: center;
 }
+/* .anim-container::before {
+    content: "here";
+    display: block;
+    width: 100px;
+    height: 30px;
+    background: yellow;
+} */
+
 .center-title {
-    color: purple;
+    /* color: purple; */
     text-align: center;
+    /* outline: red 1px solid; */
+    /* background-color: rebeccapurple; */
+    width: 3rem;
+    border-radius: 50%;
+    aspect-ratio: 1;
 }
+
 .block {
     /* flashcard version idea */
 
+    background-image: url(assets/flashcard2.png);
     position: absolute;
     width: 150px;
     aspect-ratio: 1.618;
     background-color: #dadada;
+ 
     border-radius: 0.5rem;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    background-image: url(assets/flashcard2.png);
     background-size: contain;
 }
