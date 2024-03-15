@@ -8,10 +8,14 @@ export default function AnimationBg() {
             const blocks = document.createElement("div");
             // blocks.textContent = `${i}`;
             const text = document.createElement("p")
-            text.textContent = "Hello there"
+            const tape = document.createElement('div')
+            tape.classList.add("tape-section")
+            // tape.textContent = 
+            text.textContent = "Hello there asdlkfjadlskjfldksjfal"
             blocks.classList.add("block");
             blocks.classList.add("blue");
-            // blocks.appendChild(text)
+            blocks.appendChild(tape)
+            blocks.appendChild(text)
             container.appendChild(blocks);
         }
 
@@ -41,7 +45,7 @@ export default function AnimationBg() {
                 // easing: 'linear',
                 duration: 3000,
                 delay: 1000,
-                complete: animateBlock, //this makes the background to continue the animations
+                // complete: animateBlock, //this makes the background to continue the animations
             });
         }
         animateBlock();
