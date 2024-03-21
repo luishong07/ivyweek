@@ -1,5 +1,7 @@
 :root {
     --bg-color: #eaead5;
+    --stacked-paper-1: #b5b5a5;
+    --stacked-paper-2: #8e8e80;
     --main-color: #475ca7;
     font-family: "Architects Daughter", cursive;
     --pink: #ecb2ba;
@@ -42,27 +44,35 @@ body {
 }
 .card::before {
     transform: translateX(-0.3rem) skew(0deg) rotate(4deg);
+    /* transform: translateX(0rem) skew(0deg) rotate(0deg); */
     border-radius: 1rem;
     position: absolute;
     display: block;
-    z-index: -99;
+    z-index: -98;
     border: 1px var(--main-color) solid;
     height: 23.5%;
     width: 48.1%;
     content: "";
-    background-color: var(--bg-color);
+    background-color: var(--stacked-paper-1);
     background-image: url(assets/paper-bg.png);
     transition: transform 0.5s;
 }
 /* slide on hover */
 .card:nth-child(even):hover::before {
     /* only make slight animation */
-    transform: translateX(95%) skew(0deg) rotate(0deg);
+    transform: translateX(4%) skew(0deg) rotate(-1deg);
 }
+.card:nth-child(even):hover::after {
+    /* only make slight animation */
+    transform: translateX(7%) translateY(-11rem) rotate(-2deg);
+    /* border: 1px red solid; */
+}
+
 /* static card */
 .card::after {
     
     transform: translateX(-0.3rem) translateY(-11rem) skew(0deg) rotate(-3deg);
+    /* transform: translateX(0rem) translateY(-11rem) skew(0deg) rotate(0deg); */
     border-radius: 1rem;
     position: absolute;
     display: block;
@@ -71,14 +81,23 @@ body {
     height: 23.5%;
     width: 48.1%;
     content: "";
-    background-color: var(--bg-color);
+    background-color: var(--stacked-paper-2);
     background-image: url(assets/paper-bg.png);
+    transition: transform 0.5s;
+
 }
 .card:nth-child(odd):hover::before {
     /* only make slight animation */
-    transform: translateX(-20rem) skew(0deg);
+    transform: translateX(-4%) skew(0deg) rotate(2deg);
     /* border: 1px red solid; */
 }
+.card:nth-child(odd):hover::after {
+    /* only make slight animation */
+    transform: translateX(-7%) translateY(-11rem) skew(0deg) rotate(2deg);
+    /* border: 1px red solid; */
+}
+
+
 
 .content {
     display: grid;
@@ -339,6 +358,7 @@ input[type="text"] {
 
 .block:hover{
     cursor: pointer;
+    z-index: 99;
 }
 
 .block::after {
@@ -415,4 +435,16 @@ input[type="text"] {
 
 .block p {
     position: absolute;
+}
+.clip-icon{
+    /* outline: red 1px solid; */
+    /* margin-left:  */
+    /* cursor: pointer;
+    margin-right: 0.5rem; */
+    transform: rotate(90deg) scale(1.5);
+    transition: transform 0.5s;
+    float: left;
+}
+.clip-icon[shift="1"] {
+    transform: translate(-0.5rem, -0.5rem) scale(1.5) rotate(90deg)
 }

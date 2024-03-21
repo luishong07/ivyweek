@@ -3,6 +3,7 @@ import "../index.css";
 import TaskForm from "./TaskForm";
 import TaskItem from "./TaskItem";
 import randomIcon from "../assets/randomIcon.svg";
+import paperClip from "../assets/paperClip.svg";
 import trashCan from "../assets/trashCan.svg";
 import useLocalStorage from "../hooks/useLocalStorage";
 import { v4 as uuidv4 } from "uuid";
@@ -12,6 +13,7 @@ export default function Card(props) {
     const [tasks, setTasks] = useState(newLocalTask);
     const [wobble, setWobble] = useState(0);
     const [toss, setToss] = useState(0);
+    const [shift, setShift] = useState(0);
 
     const handleFetchData = async () => {
         try {
@@ -24,7 +26,7 @@ export default function Card(props) {
             };
             setTasks([...tasks, newTask]);
             setNewLocalTask([...tasks, newTask]);
-        } catch(error) {
+        } catch (error) {
             // console.log(error);
         }
     };
@@ -59,8 +61,18 @@ export default function Card(props) {
     };
 
     return (
-        <div className="card">
+        <div className="card" 
+            onMouseEnter={() => setShift(1)}
+            onMouseLeave={() => setShift(0)}
+            >
             <div className="day-header">
+                <img
+                    shift={shift}
+                    className="clip-icon"
+                    src={paperClip}
+                    alt="icon"
+                    onAnimationEnd={() => setShift(0)}
+                />
                 <img
                     onClick={handleAddingRandomTask}
                     wobble={wobble}
