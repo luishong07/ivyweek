@@ -11,7 +11,7 @@ export default function AnimationBg() {
             const tape = document.createElement('div')
             tape.classList.add("tape-section")
             // tape.textContent = 
-            text.textContent = "Hello there asdlkfjadlskjfldksjfal"
+            text.textContent = ""
             blocks.classList.add("block");
             blocks.classList.add("blue");
             blocks.appendChild(tape)
