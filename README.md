@@ -116,7 +116,7 @@ This project implements the core principles of the Ivy Lee Method by limiting yo
 
 * Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/luishong07/ivyweek.git
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

@@ -27,7 +27,7 @@ export default function Card(props) {
             setTasks([...tasks, newTask]);
             setNewLocalTask([...tasks, newTask]);
         } catch (error) {
-            // console.log(error);
+            alert(error)
         }
     };
 

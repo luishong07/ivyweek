@@ -8,10 +8,11 @@ export default function AnimationBg() {
             const blocks = document.createElement("div");
             // blocks.textContent = `${i}`;
             const text = document.createElement("p")
+            text.classList.add("sticky-text")
             const tape = document.createElement('div')
             tape.classList.add("tape-section")
             // tape.textContent = 
-            text.textContent = ""
+            text.textContent = "Roses are red; violets blue; css go bbbbrrr"
             blocks.classList.add("block");
             blocks.classList.add("blue");
             blocks.appendChild(tape)
