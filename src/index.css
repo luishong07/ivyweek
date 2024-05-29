@@ -318,6 +318,30 @@ input[type="text"] {
     border-radius: 50%;
     aspect-ratio: 1;
 }
+.purple{
+    --paper-color: #eec1f6;
+    --paper-dark: #d0a8d5;
+    --shadow-size: 3px;
+    --transparent: rgba(236, 178, 186, 0);
+}
+.orange{
+    --paper-color: #f6d8c1;
+    --paper-dark: #d5c2a8;
+    --shadow-size: 3px;
+    --transparent: rgba(236, 178, 186, 0);
+}
+.yellow{
+    --paper-color: #f6f3c1;
+    --paper-dark: #d5d2a8;
+    --shadow-size: 3px;
+    --transparent: rgba(236, 178, 186, 0);
+}
+.green{
+    --paper-color: #d0f6c1;
+    --paper-dark: #b5d5a8;
+    --shadow-size: 3px;
+    --transparent: rgba(236, 178, 186, 0);
+}
 .pink {
     --paper-color: var(--pink);
     --paper-dark: var(--pink-dark);
