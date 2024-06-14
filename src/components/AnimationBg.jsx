@@ -1,8 +1,7 @@
 import { useEffect } from "react";
 import anime from "animejs/lib/anime.es.js";
-// import data from '../util/data.json' 
-const colors = ["blue", "pink", "green", "purple", "orange"];
 
+const colors = ["blue", "pink", "green", "purple", "orange"];
 const reminders = [
     "Don't forget - dentist at 2pm!",
     "Call Mom - birthday wishes!",
@@ -28,7 +27,6 @@ const reminders = [
     "Warning: May nap later.",
     "Brain = on vacation. ️",
     "Need more sleep.",
-    "Adulting is hard. Send wine.",
     "Running on fumes (and caffeine).",
     "Hibernation mode: activated.",
     "Did I leave the oven on?",
@@ -71,16 +69,11 @@ export default function AnimationBg() {
         const selectedRemindersIndexes = distinctIndexGenerator();
         for (let i = 0; i < 8; i++) {
             const blocks = document.createElement("div");
-            // blocks.textContent = `${i}`;
             const text = document.createElement("p");
             text.classList.add("sticky-text");
             const tape = document.createElement("div");
             tape.classList.add("tape-section");
-            // text.textContent =
-            //     "Roses are red; violets blue; css go bbbbrrrbbbbrrr";
             text.textContent = reminders[selectedRemindersIndexes[i]];
-            // text.textContent = reminders[Math.floor(Math.random() * reminders.length)]
-            // console.log(reminders[Math.floor(Math.random() * reminders.length)])
             blocks.classList.add("block");
             blocks.classList.add(
                 colors[Math.floor(Math.random() * colors.length)]
@@ -102,7 +95,6 @@ export default function AnimationBg() {
                     const sign = Math.floor(Math.random() * 2);
                     const newTranslateX = sign ? xCoordinate : -1 * xCoordinate;
                     return newTranslateX;
-                    // return anime.random(-innerWidth/2,innerWidth/2)*0.6
                 },
                 translateY: function () {
                     return (
@@ -117,7 +109,7 @@ export default function AnimationBg() {
                 // easing: 'linear',
                 duration: 3000,
                 delay: 1000,
-                // complete: animateBlock, //this makes the background to continue the animations
+                // complete: animateBlock
             });
         }
         animateBlock();

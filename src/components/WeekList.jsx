@@ -1,4 +1,3 @@
-import React from "react";
 import Card from "./Card";
 
 const daysAndWeek = [
@@ -12,10 +11,10 @@ const daysAndWeek = [
     {day:"sun",id:0},
 ]
 
-export default function WeekList() {
+export default function WeekList({setShowModal}) {
     return <div className="week-list">
     {daysAndWeek.map(day =>{
-        return <Card key={day.day} day={day}/>
+        return <Card key={day.day} day={day} setShowModal={setShowModal}/>
     } )}
     </div>;
 }

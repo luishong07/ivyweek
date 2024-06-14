@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import  { useEffect, useState } from "react";
 import "../index.css";
 import TaskForm from "./TaskForm";
 import TaskItem from "./TaskItem";
@@ -9,11 +10,13 @@ import useLocalStorage from "../hooks/useLocalStorage";
 import { v4 as uuidv4 } from "uuid";
 
 export default function Card(props) {
+    console.log(props)
     const [newLocalTask, setNewLocalTask] = useLocalStorage(props.day.day, []);
     const [tasks, setTasks] = useState(newLocalTask);
     const [wobble, setWobble] = useState(0);
     const [toss, setToss] = useState(0);
     const [shift, setShift] = useState(0);
+
 
     const handleFetchData = async () => {
         try {
@@ -27,7 +30,7 @@ export default function Card(props) {
             setTasks([...tasks, newTask]);
             setNewLocalTask([...tasks, newTask]);
         } catch (error) {
-            alert(error)
+            props.setShowModal(true)
         }
     };
 
