@@ -5,8 +5,7 @@ import AlertBox from "./components/AlertBox";
 import { useState } from "react";
 
 function App() {
-    //idea for background animation or progress
-    //snake-like game that grows as tasks are completed; constellation-like drawing with p5
+    
     const [showMdal, setShowModal] = useState(false)
     return (
         <>

@@ -105,11 +105,8 @@ export default function AnimationBg() {
                     return anime.random(1, 1.2);
                 },
                 easing: "spring(1, 40, 10, 0)",
-                // easing: 'cubicBezier(.5, .05, .1, .3)',
-                // easing: 'linear',
                 duration: 3000,
                 delay: 1000,
-                // complete: animateBlock
             });
         }
         animateBlock();
