@@ -10,7 +10,6 @@ import useLocalStorage from "../hooks/useLocalStorage";
 import { v4 as uuidv4 } from "uuid";
 
 export default function Card(props) {
-    console.log(props)
     const [newLocalTask, setNewLocalTask] = useLocalStorage(props.day.day, []);
     const [tasks, setTasks] = useState(newLocalTask);
     const [wobble, setWobble] = useState(0);

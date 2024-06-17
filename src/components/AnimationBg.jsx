@@ -64,7 +64,6 @@ const distinctIndexGenerator = () => {
 
 export default function AnimationBg() {
     useEffect(() => {
-        
         const container = document.querySelector(".anim-container");
         const selectedRemindersIndexes = distinctIndexGenerator();
         for (let i = 0; i < 8; i++) {
@@ -82,9 +81,54 @@ export default function AnimationBg() {
             blocks.appendChild(tape);
             blocks.appendChild(text);
             container.appendChild(blocks);
+            blocks.addEventListener('mouseenter',function(e){
+                moveAway(e.target)
+            },false)
         }
+        function moveAway(element) {
+            // console.log("hover");
+            anime({
+                targets: element,
+                translateX: function () {
+                    const xCoordinate = anime.random(
+                        (0.65 * innerWidth) / 2,
+                        (0.9 * innerWidth) / 2
+                    );
+                    const sign = Math.floor(Math.random() * 2);
+                    const newTranslateX = sign ? xCoordinate : -1 * xCoordinate;
+                    return newTranslateX;
+                },
+                translateY: function () {
+                    return (
+                        anime.random(-innerHeight / 2, innerHeight / 2) * 0.8
+                    );
+                },
+                rotate: function() { return anime.random(-10, 10)},
 
+            });
+        }
         function animateBlock() {
+            // anime({
+            //     targets: ".block",
+            //     translateX: [
+            //         { value: anime.random(), duration: 1000, delay: 500 },
+            //         { value: 0, duration: 1000, delay: 500 },
+            //     ],
+            //     translateY: [
+            //         { value: -40, duration: 500 },
+            //         { value: 40, duration: 500, delay: 1000 },
+            //         { value: 0, duration: 500, delay: 1000 },
+            //     ],
+            //     // { translateY: 40 },
+            //     // { translateX: 0 },
+            //     // { translateY: 0 },
+
+            //     duration: 3000,
+            //     easing: "easeOutElastic(1, .8)",
+            //     loop: true,
+            //     // complete: animateBlock(),
+            //     // autoplay: true
+            // });
             anime({
                 targets: ".block",
                 translateX: function () {
@@ -104,6 +148,7 @@ export default function AnimationBg() {
                 scale: function () {
                     return anime.random(1, 1.2);
                 },
+                rotate: function() { return anime.random(-45, 45)},
                 easing: "spring(1, 40, 10, 0)",
                 duration: 3000,
                 delay: 1000,
