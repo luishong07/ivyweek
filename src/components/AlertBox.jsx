@@ -5,7 +5,7 @@ export default function AlertBox({close}) {
         <div onClick={()=> close() } className="overlay">
             <div className="alert-content">
                 <div className="alert-message">
-                    Oops... Looks like there was a problem. Try again later. 
+                    Oops... Looks like there was a problem. Please try again later. 
                 </div>
             </div>
         </div>

@@ -86,7 +86,6 @@ export default function AnimationBg() {
             },false)
         }
         function moveAway(element) {
-            // console.log("hover");
             anime({
                 targets: element,
                 translateX: function () {
@@ -108,27 +107,7 @@ export default function AnimationBg() {
             });
         }
         function animateBlock() {
-            // anime({
-            //     targets: ".block",
-            //     translateX: [
-            //         { value: anime.random(), duration: 1000, delay: 500 },
-            //         { value: 0, duration: 1000, delay: 500 },
-            //     ],
-            //     translateY: [
-            //         { value: -40, duration: 500 },
-            //         { value: 40, duration: 500, delay: 1000 },
-            //         { value: 0, duration: 500, delay: 1000 },
-            //     ],
-            //     // { translateY: 40 },
-            //     // { translateX: 0 },
-            //     // { translateY: 0 },
-
-            //     duration: 3000,
-            //     easing: "easeOutElastic(1, .8)",
-            //     loop: true,
-            //     // complete: animateBlock(),
-            //     // autoplay: true
-            // });
+            
             anime({
                 targets: ".block",
                 translateX: function () {
